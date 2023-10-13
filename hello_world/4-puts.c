@@ -2,7 +2,7 @@
 
 /*
  * main function print something with puts
- *
+ et ça c'est ouf !
  */
 int main(void)
 {
