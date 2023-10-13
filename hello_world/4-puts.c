@@ -1,8 +1,5 @@
 #include <stdio.h>
-/*
- *print charactere chain
- *
- */
+ //print charactere chain
 int main(void)
 {
 	char message[] = "\"Programming is like building a multilingual puzzle";
