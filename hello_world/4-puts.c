@@ -1,9 +1,10 @@
 #include <stdio.h>
-
-/*
- * main function print something with puts
- et ça c'est ouf !
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
  */
+
 int main(void)
 {
 	char message[] = "\"Programming is like building a multilingual puzzle";
