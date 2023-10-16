@@ -13,6 +13,7 @@ int main(void)
 	{
 		putchar(c);
 		putchar(',');
+		putchar(' ');
 		c++;
 	}
 	putchar(c);
