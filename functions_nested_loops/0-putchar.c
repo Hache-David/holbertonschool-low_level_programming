@@ -9,5 +9,6 @@ int main(void)
 {
 	char c[] = "_putchar\n";
 
-	return (write(1, &c, 9));
+	write(1, &c, 9);
+	return (0);
 }
