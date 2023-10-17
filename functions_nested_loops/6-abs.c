@@ -1,12 +1,14 @@
 #include <unistd.h>
 #include <stdlib.h>
 /**
-* main - check the code
+* _abs - check the code
+*
+* @i - int .
 *
 * Return: Always 0.
 */
 
 int _abs(int i)
 {	
-	return(abs(i));
+	return (abs(i));
 }
