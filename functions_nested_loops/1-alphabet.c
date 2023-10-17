@@ -4,7 +4,6 @@
 * print_alphabet - Entry point
 *
 * Return: Always 0 (Success)
-* 
 */
 
 int print_alphabet(void)
