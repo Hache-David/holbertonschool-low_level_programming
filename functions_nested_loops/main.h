@@ -5,7 +5,20 @@
  * Return: Always 0 (Success)
  */
 
-int _putchar(char c)
+int _putchar(void)
 {
-	return (write(1, &c, 1));
+        char c[] = "_putchar\n";
+
+        write(1, &c, 9);
+        return (0);
 }
+
+
+int print_alphabet(void)
+{
+        char c[] = "abcdefghijklmnopqrstuvwxyz"
+
+        write(1, &c, 26);
+        return (0);
+}
+
