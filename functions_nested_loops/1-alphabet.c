@@ -1,9 +1,10 @@
 #include "main.h"
 #include <unistd.h>
 /**
-* main - Entry point
+* print_alphabet - Entry point
 *
 * Return: Always 0 (Success)
+* 
 */
 
 int print_alphabet(void)
