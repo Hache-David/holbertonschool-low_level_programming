@@ -7,17 +7,11 @@
 */
 void jack_bauer(void)
 {
-	int m;
-	int M;
-	int h;
-	int H;
-	int i;
-
-	m = 0;
-	M = 0;
-	h = 0;
-	H = 0;
-	i = 0;
+	int m = 0;
+	int M = 0;
+	int h = 0;
+	int H = 0;
+	int i = 0;
 
 	_putchar(m + '0');
 	_putchar(M + '0');
@@ -26,7 +20,7 @@ void jack_bauer(void)
 	_putchar(H + '0');
 	write(1, "\n", 1);
 
-	while ( H <= 2  && i != 1)
+	while (H <= 2  && i != 1)
 	{
 		m++;
 		if (m == 10)
@@ -44,10 +38,8 @@ void jack_bauer(void)
 			H++;
 			h = 0;
 		}
-		if (h == 3 && H == 2 && M == 5 && m == 9) 
-		{
+		if (h == 3 && H == 2 && M == 5 && m == 9)
 			i++;
-		}
 		_putchar(H + '0');
 		_putchar(h + '0');
 		write(1, ":", 1);
@@ -55,7 +47,4 @@ void jack_bauer(void)
 		_putchar(m + '0');
 		write(1, "\n", 1);
 	}
-
-
 }
-
