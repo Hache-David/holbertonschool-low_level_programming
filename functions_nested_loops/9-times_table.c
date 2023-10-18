@@ -22,9 +22,14 @@ void times_table(void)
 				_putchar(i3 + '0');
 				write(1, "\n", 1);
 			}
-			else if (i2 < 9 && i3 < 10)
+			else if (i2 < 9 && i3 < 10 && i2 != 0)
 			{
 				write(1, "  ", 2);
+				_putchar(i3 + '0');
+				write(1, ",", 1);
+			}
+			else if (i2 < 9 && i3 < 10 && i2 == 0)
+			{
 				_putchar(i3 + '0');
 				write(1, ",", 1);
 			}
