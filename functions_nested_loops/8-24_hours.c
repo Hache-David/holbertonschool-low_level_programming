@@ -44,7 +44,7 @@ void jack_bauer(void)
 			H++;
 			h = 0;
 		}
-		if (h == 4 && H == 2) 
+		if (h == 3 && H == 2 && M == 5 && m == 9) 
 		{
 			i++;
 		}
