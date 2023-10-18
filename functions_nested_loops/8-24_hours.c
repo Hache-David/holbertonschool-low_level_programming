@@ -11,41 +11,51 @@ void jack_bauer(void)
 	int M;
 	int h;
 	int H;
+	int i;
 
 	m = 0;
 	M = 0;
 	h = 0;
 	H = 0;
+	i = 0;
 
-	while (H != 3)
+	_putchar(m + '0');
+	_putchar(M + '0');
+	write(1, ":", 1);
+	_putchar(h + '0');
+	_putchar(H + '0');
+	write(1, "\n", 1);
+
+	while ( H <= 2  && i != 1)
 	{
-		_putchar(H + '0');
-
-		if (H == 2 && h == 3 && M == 5 && m == 9)
+		m++;
+		if (m == 10)
 		{
-			H = 3;
+			M++;
+			m = 0;
 		}
+		if (M == 6)
+		{
+			h++;
+			M = 0;
+		}
+		if (h == 10 && H != 2)
+		{
+			H++;
+			h = 0;
+		}
+		if (h == 4 && H == 2) 
+		{
+			i++;
+		}
+		_putchar(H + '0');
 		_putchar(h + '0');
 		write(1, ":", 1);
 		_putchar(M + '0');
 		_putchar(m + '0');
 		write(1, "\n", 1);
-		if (m == 9)
-		{
-			m = 0;
-			M = M + 1;
-		}
-		if (M == 6)
-		{
-			M = 0;
-			h = h + 1;
-		}
-		if (h == 9)
-		{
-			h = 0;
-			H = H + 1;
-		}
-		m++;
 	}
+
+
 }
 
