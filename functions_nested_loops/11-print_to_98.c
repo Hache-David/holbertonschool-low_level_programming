@@ -71,6 +71,6 @@ void print_to_98(int n)
 			i++;
 		}
 	}
-	write(1 , "98", 3);
+	write(1 , "98", 2);
 	write(1, "\n", 1);
 }
