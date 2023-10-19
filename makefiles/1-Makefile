@@ -2,5 +2,5 @@ CC = gcc
 SRC = *.c
 
 all :
-	gcc main.c school.c -o school
+	cc main.c school.c -o school
 
