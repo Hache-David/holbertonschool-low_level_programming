@@ -46,7 +46,7 @@ void print_to_98(int n)
 					{
 						write(1, "-", 1);
 						_putchar((-i / 100) + '0');
-						_putchar(((-i % 100) + '0');
+						_putchar(((-i % 100) + '0'));
 						_putchar((-i % 10) + '0');
 						write(1, ",", 1);
 						write(1, " ", 1);
