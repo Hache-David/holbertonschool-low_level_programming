@@ -42,7 +42,7 @@ void print_to_98(int n)
 			{
 				if (i < 0)
 				{
-					if ( i <= -100)
+					if (i <= -100)
 					{
 						write(1, "-", 1);
 						_putchar((-i / 100) + '0');
@@ -51,7 +51,7 @@ void print_to_98(int n)
 						write(1, ",", 1);
 						write(1, " ", 1);
 					}
-					else
+					else if(i <= -10)
 					{	
 						write(1 , "-", 1);
 						_putchar((-i / 10) + '0');
