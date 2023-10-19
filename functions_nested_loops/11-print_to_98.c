@@ -38,14 +38,26 @@ void print_to_98(int n)
 		}
 		else
 		{
-			if (i >= 10 || i <= -10)
+			if (i >= 10)
 			{
 				if (i < 0)
 				{
-					write(1 , "-", 1);
-					_putchar((-i / 10) + '0');
-					_putchar((-i % 10) + '0');
-					write(1, ",", 1);
+					if ( i <= -100)
+					{
+						write(1, "-", 1);
+						_putchar((-i / 100) + '0');
+						_putchar(((-i % 100) + '0');
+						_putchar((-i % 10) + '0');
+						write(1, ",", 1);
+						write(1, " ", 1);
+					}
+					else
+					{	
+						write(1 , "-", 1);
+						_putchar((-i / 10) + '0');
+						_putchar((-i % 10) + '0');
+						write(1, ",", 1);
+					}
 				}
 				else
 				{
