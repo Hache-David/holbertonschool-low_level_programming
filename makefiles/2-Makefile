@@ -3,5 +3,6 @@ SRC = school.c main.c
 OBJ = main.o school.o
 NAME = school
 all :
-	cc main.c school.c -o school
-
+	gcc    -c -o main.o main.c
+	gcc    -c -o school.o school.c
+	gcc main.o school.o -o school
