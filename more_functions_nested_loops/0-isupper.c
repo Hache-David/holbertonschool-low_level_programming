@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * main - check the code.
+ * _isupper - check the code.
  *
- * @c: input argt. 
+ * @c: input argt.
  *
  * Return: Always 0.
  */
