@@ -13,15 +13,14 @@ $(NAME) : $(OBJ)
 %.c : %.o
 	$(CC) -c -o $< $@
 
-clean :
-	rm -rf *~ $(NAME)
+clean : $(NAME)
+	rm -rf *~ $<
 
-oclean :
-	rm -rf $(OBJ)
+oclean : $(OBJ)
+	rm -rf $<
 
-fclean :
-	rm -f *~ $(NAME)
-	rm -f $(OBJ)
+fclean : $(NAME) $(OBJ)
+	rm -f *~ $^
 
 re :
 	rm -f $(OBJ)
