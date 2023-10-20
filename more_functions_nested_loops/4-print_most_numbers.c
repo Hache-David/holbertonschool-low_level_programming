@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * main - check the code
+ * print_most_numbers - check the code
  *
  * Return: Always 0.
  */
@@ -11,7 +11,7 @@ void print_most_numbers(void)
 
 	while (a <= 9)
 	{
-		if ( a != 2 && a != 4)
+		if (a != 2 && a != 4)
 		{
 			_putchar(a + '0');
 		}
