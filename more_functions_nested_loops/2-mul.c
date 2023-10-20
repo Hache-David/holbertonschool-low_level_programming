@@ -2,7 +2,9 @@
 /**
 * mul - check the code
 *
-* @a: first argt
+* @a: first argt.
+*
+* @b: second argt.
 *
 * Return: Always 0.
 */
