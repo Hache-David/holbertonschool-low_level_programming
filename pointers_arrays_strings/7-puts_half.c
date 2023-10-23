@@ -10,7 +10,7 @@
 
 void puts_half(char *str)
 {
-	int taille = 0;
+	int taille = 1;
 	int i = 0;
 
 	while (str[i] != '\0')
@@ -18,7 +18,7 @@ void puts_half(char *str)
 		taille++;
 		i++;
 	}
-	for (i = 1; i <= (taille - 1); i++)
+	for (i = 0; i <= (taille - 1); i++)
 	{
 		if ((taille % 2) == 0)
 		{
