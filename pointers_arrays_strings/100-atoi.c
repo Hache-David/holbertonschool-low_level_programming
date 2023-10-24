@@ -24,7 +24,7 @@ int _atoi(char *s)
 		i++;
 	}
 	i = 0;
-	if (d == 1)
+	else if (d == 1)
 	{
 		while (s[i] != '\0' || stop != 1)
 		{
@@ -50,5 +50,5 @@ int _atoi(char *s)
 			i++;
 		}
 	}
-		return (0);
+	return (0);
 }
