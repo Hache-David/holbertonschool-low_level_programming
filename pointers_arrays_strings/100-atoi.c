@@ -17,38 +17,32 @@ int _atoi(char *s)
 
 	if (s[i] == '\0')
 		return (0);
-	while (s[i] != '\0' || d != 1)
+
+	while (s[i] != '\0' || stop != 1)
 	{
+		if (s[i] == 45)
+			index = index * (-1);
 		if (s[i] >= 48 && s[i] <= 57)
-			d = 1;
-		i++;
-	}
-	i = 0;
-	if (d == 1)
-	{
-		while (s[i] != '\0' || stop != 1)
 		{
-			if (s[i] == 45)
-				index = index * (-1);
-			if (s[i] >= 48 && s[i] <= 57)
+			d = 1;
+			while (s[i] >= 48 && s[i] <= 57)
 			{
-				while (s[i] >= 48 && s[i] <= 57)
+				nbr = s[i] - '0';
+				if (c > 1)
+				sum = (sum * 10) + nbr;
+				else
 				{
-					nbr = s[i] - '0';
-					if (c > 1)
-					sum = (sum * 10) + nbr;
-					else
-					{
-						sum = nbr;
-						c = 2;
-					}
-					i++;
+					sum = nbr;
+					c = 2;
 				}
-				return (sum * index);
-				stop = 1;
+				i++;
 			}
-			i++;
+			return (sum * index);
+			stop = 1;
 		}
+		if (d == 0 && s[i + 1] == '\0')
+			return(0);
+		i++;
 	}
 	return (0);
 }
