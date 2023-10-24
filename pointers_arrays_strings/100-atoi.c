@@ -41,7 +41,7 @@ int _atoi(char *s)
 			stop = 1;
 		}
 		if (d == 0 && s[i + 1] == '\0')
-			return(0);
+			return (0);
 		i++;
 	}
 	return (0);
