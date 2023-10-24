@@ -24,7 +24,7 @@ int _atoi(char *s)
 		i++;
 	}
 	i = 0;
-	else if (d == 1)
+	if (d == 1)
 	{
 		while (s[i] != '\0' || stop != 1)
 		{
