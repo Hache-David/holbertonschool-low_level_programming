@@ -13,11 +13,13 @@ int _atoi(char *s)
 {
 	int i = 0;
 	int nbr = 0;
-	int sum = 0;
+	unsigned int sum = 0;
 	int index = 1;
 	int c = 0;
 	int stop = 0;
-
+	
+	if (s[i] == "")
+		return (0);
 	while (s[i] != '\0' || stop != 1)
 	{
 		if (s[i] == 45)
