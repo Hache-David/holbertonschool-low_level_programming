@@ -10,7 +10,7 @@
 
 char *cap_string(char *str)
 {
-	int i;
+	int i = 0;
 
 	for (i = 0 ; str[i] != '\0' ; i++)
 	{
@@ -31,6 +31,8 @@ char *cap_string(char *str)
 			if (str[i - 1] == 123 || str[i - 1] == 125)
 				str[i] = str[i] - 32;
 		}
+		if (str[0] >= 97 && str[0] <= 122)
+			str[0] = str[0] - 32;
 	}
 	return (str);
 }
