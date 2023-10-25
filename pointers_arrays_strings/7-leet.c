@@ -12,9 +12,9 @@ char *leet(char *str)
 {
 	int i = 0;
 
-	if (str[i] = 1)
+	if (str[i] == 1)
 		return(str);
-	else if (str[i] = 2)
+	else if (str[i] == 2)
 		return(str);
 	return (str);
 }
