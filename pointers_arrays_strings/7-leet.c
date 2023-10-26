@@ -11,10 +11,19 @@
 char *leet(char *str)
 {
 	int i = 0;
+	int y;
+	char t1[] = "aAeEoOtTlL";
+	char t2[] = "4433007711";
 
-	if (str[i] == 1)
-		return(str);
-	else if (str[i] == 2)
-		return(str);
+	for (i = 0; str[i] != '\0' ; i++)
+	{
+		for (y = 0; t1[y] != '\0' ; y++)
+		{
+			if (t1[y] == str[i])
+			{
+				str[i] = t2[y];
+			}
+		}
+	}
 	return (str);
 }
