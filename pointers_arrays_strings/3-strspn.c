@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
  * _strspn - check the code
  *
@@ -11,20 +11,24 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int lenght = 1;
 	int i = 0;
-	int y;
+	int j;
+	unsigned int index = 0;
 
-	while (accept[i] != '\0')
-		i++;
-	lenght = lenght + i;
-	for (i = 0 ; accept[i] != '\0' ; i++)
+	while (s[i] != '\0')
 	{
-		for (y = 0 ; s[y] != '\0' ; y++)
+		for (j = 0 ; accept[j] != '\0' ; j++)
 		{
-			if (accept[i] == s[y])
-				return (lenght);
+			if (s[i] == accept[j])
+			{
+				index++;
+				break;
+			}
+			else if (accept[j + 1] == '\0')
+				return (index);
 		}
+		i++;
 	}
-	return (lenght = 0);
+
+	return (index);
 }
