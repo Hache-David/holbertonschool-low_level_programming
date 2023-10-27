@@ -12,13 +12,22 @@
 
 char *_strpbrk(char *s, char *accept)
 {
-	char *s2 = NULL;
 	int i = 0;
+	int j;
+	char *s2;
+	int count = 0;
 
-	while (s[i] != accept[i])
+	while (s[i] != '\0')
 	{
+		for (j = 0 ; accept[j] != '\0' ; j++)
+		{
+			if (s[i] == accept[j] && count == 0)
+			{
+				s2 = &s[i];
+				count = 1;
+			}
+		}
 		i++;
 	}
-	s2 = &s[i - 1];
 	return (s2);
 }
