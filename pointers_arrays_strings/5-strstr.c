@@ -28,7 +28,7 @@ char *_strstr(char *haystack, char *needle)
 		}
 		i++;
 	}
-	if (count == 0)
+	if (needle[0] == '\0')
 	{
 		s2 = &haystack[0];
 	}
