@@ -20,8 +20,11 @@ char *_strstr(char *haystack, char *needle)
 	{
 		if (haystack[i] == needle[0] && count != 1)
 		{
-			s2 = &haystack[i];
-			count = 1;
+			if (haystack[i + 1] == needle[1])
+			{
+				s2 = &haystack[i];
+				count = 1;
+			}
 		}
 		i++;
 	}
