@@ -20,8 +20,6 @@ int _atoi(char *s)
 
 	while (s[i] != '\0' || stop != 1)
 	{
-		if (s[i] < 48 && s[i] > 57)
-			return (0);
 		if (s[i] == 45)
 			index = index * (-1);
 		if (s[i] >= 48 && s[i] <= 57)
@@ -60,7 +58,7 @@ int _atoi(char *s)
 
 int main(int argc, char **argv)
 {
-	int i;
+	int i, j;
 	int num1 = 0;
 	int sum = 0;
 
@@ -69,15 +67,18 @@ int main(int argc, char **argv)
 
 	for (i = 0; argv[i]; i++)
 	{
-		if (*argv[i] >= 65 && *argv[i] <= 90)
+		for (j = 0; argv[i][j]; j++)
 		{
-			printf("Error\n");
-			return (1);
-		}
-		if (*argv[i] >= 97 && *argv[i] <= 122)
-		{
-			printf("Error\n");
-			return (1);
+			if (argv[i][j] >= 65 && argv[i][j] <= 90)
+			{
+				printf("Error\n");
+				return (1);
+			}
+			if (argv[i][j] >= 97 && argv[i][j] <= 122)
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
 	}
 	i = 1;
