@@ -20,6 +20,8 @@ int _atoi(char *s)
 
 	while (s[i] != '\0' || stop != 1)
 	{
+		if (s[i] < 48 && s[i] > 57)
+			return (0);
 		if (s[i] == 45)
 			index = index * (-1);
 		if (s[i] >= 48 && s[i] <= 57)
@@ -82,8 +84,16 @@ int main(int argc, char **argv)
 	while (argv[i])
 	{
 		num1 = _atoi(argv[i]);
-		sum = sum + num1;
-		i++;
+		if (num1 == 0)
+		{
+			printf("Error\n");
+			return (1);
+		}
+		else
+		{
+			sum = sum + num1;
+			i++;
+		}
 	}
 	printf("%d\n", sum);
 	return (0);
