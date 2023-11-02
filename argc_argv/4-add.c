@@ -78,7 +78,7 @@ int main(int argc, char **argv)
 			return (1);
 		}
 	}
-	i = 0;
+	i = 1;
 	while (argv[i])
 	{
 		num1 = _atoi(argv[i]);
