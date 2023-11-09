@@ -13,15 +13,12 @@
 
 void *malloc_checked(unsigned int b)
 {
-	unsigned int *str = NULL;
+	unsigned int *str;
 	
-	if (b == 0)
-		return (NULL);
 	str = malloc(b);
 	if (str == NULL)
 	{
-		*str = 98;
-		return (str);
+		exit (98);
 	}
 	return (str);
 }
