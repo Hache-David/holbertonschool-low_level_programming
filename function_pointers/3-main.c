@@ -3,13 +3,15 @@
 #include <stdlib.h>
 
 /**
- * get_op_func - function to choose the right opération
+ * main - entry point
  *
+ * @argc: args count
+ * @argv: args value
  *
- * return : an int.
+ * Return: success always 0.
  */
 
-int main(int argc , char **argv)
+int main(int argc, char **argv)
 {
 	int num1 = atoi(argv[1]);
 	int num2 = atoi(argv[3]);
@@ -26,7 +28,7 @@ int main(int argc , char **argv)
 		printf("Error\n");
 		return (98);
 	}
-	if ( num2 == 0 && (operator == '/' || operator == '%'))
+	if (num2 == 0 && (operator == '/' || operator == '%'))
 	{
 		printf("Error\n");
 		return (100);
