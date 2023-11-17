@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 	char *operator = argv[2];
 	int calc = 0;
 
-	if (!(*get_op_func)(&operator)(num1, num2))
+	if (!(*get_op_func)(operator)(num1, num2))
 	{
 		printf("Error\n");
 		return (99);
@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		return (100);
 	}
-	calc = (*get_op_func)(&operator)(num1, num2);
+	calc = (*get_op_func)(operator)(num1, num2);
 	printf("%d\n", calc);
 	return (0);
 }
