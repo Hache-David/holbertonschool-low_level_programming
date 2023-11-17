@@ -15,15 +15,16 @@ int main(int argc, char **argv)
 {
 	int num1 = atoi(argv[1]);
 	int num2 = atoi(argv[3]);
-	char *operator = argv[2];
+	char *operator;
 	int calc = 0;
 
-	if (!(*get_op_func)(operator)(num1, num2))
+	operator = argv[2];
+	if (get_op_func(operator) == NULL || operator[1] != '\0')
 	{
 		printf("Error\n");
 		return (99);
 	}
-	if (argc < 3)
+	if (argc != 4)
 	{
 		printf("Error\n");
 		return (98);

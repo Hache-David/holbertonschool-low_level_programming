@@ -1,5 +1,5 @@
 #include "3-calc.h"
-#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * get_op_func - function to choose the right opération
