@@ -4,7 +4,11 @@
 #include "lists.h"
 
 /**
- * main - check the code
+ * insert_dnodeint_at_index - insert a new node in the idx position.
+ *
+ * @idx: the position where you want add the new node.
+ * @n: the data on the new node.
+ * @h: the input list of node.
  *
  * Return: Always EXIT_SUCCESS.
  */
@@ -25,8 +29,13 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		copyh = *h;
 		return (copyh);
 	}
-	while(temp != NULL)
+
+	while (index <= (idx + 1))
 	{
+		if (temp->next == NULL)
+		{
+			return (NULL);
+		}
 		if ((idx - 1) == index)
 		{
 			copyh->next = temp->next;
