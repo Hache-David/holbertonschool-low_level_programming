@@ -24,12 +24,13 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	copyh->prev = NULL;
 	copyh->next = NULL;
 	temp = *h;
+	if (copyh == NULL)
+		return(NULL);
 	if (idx == 0)
 	{
 		copyh = *h;
 		return (copyh);
 	}
-
 	while (index <= (idx + 1))
 	{
 		if (temp->next == NULL)
