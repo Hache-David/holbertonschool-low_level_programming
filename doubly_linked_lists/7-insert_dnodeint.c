@@ -22,7 +22,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	copyh = malloc(sizeof(dlistint_t));
 
 	if (copyh == NULL)
-		return(NULL);
+		return (NULL);
 
 	copyh->n = n;
 	copyh->prev = NULL;
