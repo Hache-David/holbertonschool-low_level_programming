@@ -2,7 +2,6 @@
 #include <string.h>
 #include <stdio.h>
 #include "lists.h"
-
 /**
  * insert_dnodeint_at_index - insert a new node in the idx position.
  *
@@ -12,23 +11,23 @@
  *
  * Return: Always EXIT_SUCCESS.
  */
-
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	unsigned int index = 0;
-	dlistint_t *copyh;
-	dlistint_t *temp;
+	dlistint_t *copyh, *temp;
 
 	copyh = malloc(sizeof(dlistint_t));
-
 	if (copyh == NULL)
 		return (NULL);
-
 	copyh->n = n;
 	copyh->prev = NULL;
 	copyh->next = NULL;
 	temp = *h;
-
+	if (*h == NULL)
+	{
+		copyh = *h;
+		return (copyh);
+	}
 	if (idx == 0)
 	{
 		copyh = *h;
@@ -37,9 +36,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	while (index <= (idx + 1))
 	{
 		if (temp == NULL)
-		{
 			return (NULL);
-		}
 		if ((idx - 1) == index)
 		{
 			copyh->next = temp->next;
