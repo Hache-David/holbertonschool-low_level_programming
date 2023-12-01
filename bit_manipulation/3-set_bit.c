@@ -2,7 +2,7 @@
 
 /**
  * set_bit - sets the value of a bit in position index.
- * 
+ *
  * @n: pointer to the bit.
  * @index: he index
  *
