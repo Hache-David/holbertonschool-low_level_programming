@@ -31,6 +31,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 	nbre_bytes = read(descripteur1, str, letters);
+	if (nbre_bytes == 0)
+	{
+		free(str);
+		close(descripteur1);
+		return (0);
+	}
 	r_string = write(STDOUT_FILENO, str, nbre_bytes);
 	if (r_string == -1)
 	{
