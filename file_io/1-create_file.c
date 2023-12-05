@@ -29,6 +29,6 @@ int create_file(const char *filename, char *text_content)
 		check_error = write(descripteur, text_content, length);
 	if (check_error == -1)
 		return (-1);
-
+	close(descripteur);
 	return (1);
 }
