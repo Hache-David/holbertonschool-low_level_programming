@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 	empty_folder = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	if (argc < 3)
+	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
