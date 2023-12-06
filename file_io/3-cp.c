@@ -17,7 +17,7 @@
 int main(int argc, char **argv)
 {
 	int descripteur, empty_folder, bytes_read, bytes_written,
-	check_error, check_error2;
+	check_error, check_error2, rd;
 	char str[1024];
 
 	descripteur = open(argv[1], O_RDONLY);
@@ -47,11 +47,12 @@ int main(int argc, char **argv)
 	check_error = close(descripteur);
 	if (check_error == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", bytes_read);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", bytes_read);
 		close(empty_folder), exit(100);
 	}
 	check_error2 = close(empty_folder);
+	rd = read(empty_folder, str, 1024);
 	if (check_error2 == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", bytes_read), exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", rd), exit(100);
 	return (1);
 }
