@@ -5,7 +5,7 @@
 #include <fcntl.h>
 
 /**
- * create_file - create and write on it .
+ * append_text_to_file - write at the end of file if exist .
  *
  * @text_content: the text write on the file.
  * @filename: name of the file.
@@ -21,7 +21,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (filename == NULL)
 		return (-1);
 
-	descripteur = open(filename,O_WRONLY | O_APPEND, 0600);
+	descripteur = open(filename, O_WRONLY | O_APPEND, 0600);
 	if (descripteur == -1)
 		return (-1);
 	if (text_content != NULL)
