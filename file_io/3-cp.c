@@ -16,7 +16,8 @@
 
 int main(int argc, char **argv)
 {
-	int descripteur, empty_folder, bytes_read, bytes_written, check_error;
+	int descripteur, empty_folder, bytes_read, bytes_written,
+	check_error, check_error2;
 	char str[1024];
 
 	descripteur = open(argv[1], O_RDONLY);
@@ -35,19 +36,22 @@ int main(int argc, char **argv)
 	if (bytes_read == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
+		close(descripteur), close(empty_folder), exit(98);
 	}
 	bytes_written = write(empty_folder, str, bytes_read);
 	if (bytes_written == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
+		close(descripteur), close(empty_folder), exit(99);
 	}
 	check_error = close(descripteur);
 	if (check_error == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d", bytes_read);
-		exit(100);
+		close(empty_folder), exit(100);
 	}
+	check_error2 = close(empty_folder);
+	if (check_error2 == -1)
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d", bytes_read), exit(100);
 	return (1);
 }
