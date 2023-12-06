@@ -16,7 +16,7 @@
 
 int main(int argc, char **argv)
 {
-	int descripteur, empty_folder, bytes_read, bytes_written,
+	int files_from, empty_folder, bytes_read, bytes_written,
 	check_error, check_error2, rd;
 	char str[1024];
 
@@ -25,8 +25,8 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	descripteur = open(argv[1], O_RDONLY);
-	if (descripteur == -1)
+	files_from = open(argv[1], O_RDONLY);
+	if (files_from == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
@@ -37,19 +37,19 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	bytes_read = read(descripteur, str, 1024);
+	bytes_read = read(files_from, str, 1024);
 	if (bytes_read == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		close(descripteur), close(empty_folder), exit(98);
+		close(files_from), close(empty_folder), exit(98);
 	}
 	bytes_written = write(empty_folder, str, bytes_read);
 	if (bytes_written == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		close(descripteur), close(empty_folder), exit(99);
+		close(files_from), close(empty_folder), exit(99);
 	}
-	check_error = close(descripteur);
+	check_error = close(files_from);
 	if (check_error == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", bytes_read);
@@ -59,5 +59,5 @@ int main(int argc, char **argv)
 	rd = read(empty_folder, str, 1024);
 	if (check_error2 == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", rd), exit(100);
-	return (1);
+	return (0);
 }
