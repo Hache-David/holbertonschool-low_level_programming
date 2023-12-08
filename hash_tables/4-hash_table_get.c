@@ -4,9 +4,12 @@
 #include "hash_tables.h"
 
 /**
- * main - check the code
+ * hash_table_get - retrieves a value associated with a key.
  *
- * Return: Always EXIT_SUCCESS.
+ * @ht: input hashtable.
+ * @key: the comparised key.
+ *
+ * Return: the value associated with the element.
  */
 
 char *hash_table_get(const hash_table_t *ht, const char *key)
@@ -14,13 +17,13 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	unsigned long int index;
 	hash_node_t *new_node;
 
-	index = key_index((const unsigned char*)key, ht->size);
+	index = key_index((const unsigned char *)key, ht->size);
 	if (ht == NULL || key == NULL || *key == '\0')
 		return (NULL);
 	new_node = ht->array[index];
-	while(new_node != NULL)
+	while (new_node != NULL)
 	{
-		if(strcmp(new_node->key, key) == 0)
+		if (strcmp(new_node->key, key) == 0)
 		{
 			return (new_node->value);
 		}
